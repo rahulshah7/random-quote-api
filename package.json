@@ -18,5 +18,8 @@
   "homepage": "https://github.com/rahulshah7/random-quote-api#readme",
   "dependencies": {
     "express": "^4.17.0"
+  },
+  "engines": {
+    "node": "10.15.3"
   }
 }
