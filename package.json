@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rahulshah7/random-quote-api#readme",
   "dependencies": {
+    "connect-datadog": "^0.0.9",
     "express": "^4.17.0"
   },
   "engines": {

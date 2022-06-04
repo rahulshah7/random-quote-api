@@ -3,6 +3,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 const quotes = require("./quotes.json");
 
+const ddOptions = {
+  'response_code':true,
+  'tags': ['app:my_app']
+    }
+
+const connectDatadog = require('connect-datadog')(ddOptions);
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -11,6 +18,8 @@ app.use(function(req, res, next) {
   );
   next();
 });
+
+app.use(connectDatadog);
 
 app.get("/api/random-quote", (req, res, next) => {
   const quoteIndex = Math.floor(Math.random() * quotes.length);
